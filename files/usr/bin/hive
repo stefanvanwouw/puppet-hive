@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Autodetect JAVA_HOME if not defined
+. /usr/lib/bigtop-utils/bigtop-detect-javahome
+
+export HIVE_HOME=/usr/lib/hive
+exec /usr/lib/hive/bin/hive "$@"
