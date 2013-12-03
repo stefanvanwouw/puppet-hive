@@ -17,14 +17,6 @@
     <value>thrift://<%= @metastore_host %>:9083</value>
     <description>Fully-qualified domain name and port of the metastore host</description>
   </property>
-<%
-
-# if this node is the metastore_host, then render out
-# metastore backend database connection credentials
-# TODO: Possibly use hive-default.xml + hive-site.xml to only
-# render hive-site.xml with these credentials on metastore_host.
-if (@metastore_host == @fqdn)
--%>
 
   <property>
     <name>javax.jdo.option.ConnectionURL</name>
@@ -65,7 +57,6 @@ if (@metastore_host == @fqdn)
     <value>true</value>
   </property>
 
-<% end -%>
 <% if @zookeeper_hosts -%>
   <!-- Hive can use Zookeeper for table lock management -->
   <property>
