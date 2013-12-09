@@ -18,6 +18,14 @@
     <description>Fully-qualified domain name and port of the metastore host</description>
   </property>
 
+    <property>
+      <name>hive.warehouse.subdir.inherit.perms</name>
+      <value>true</value>
+      <description>Set this to true if the the table directories should inherit the
+        permission of the warehouse or database directory instead of being created
+        with the permissions derived from dfs umask</description>
+    </property>
+
   <property>
     <name>javax.jdo.option.ConnectionURL</name>
     <value><%= "jdbc:#{@jdbc_protocol}://#{@jdbc_host}:#{@jdbc_port}/#{@jdbc_database}" %></value>
